@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+
+    <head>
+        <title>Worker Thread</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    </head>
+    <style>
+            button {
+                border-radius: 12px ; 
+                height: 30px; 
+                font-family: 'Courier New', Courier, monospace; 
+                font-weight: bold;
+            }
+    </style>
+    <body>
+        <h2>Worker Thread</h2>
+        <button onclick="changeBackGround()">change Back Ground</button>
+        <button onclick="heavyMathmaticalOperation()">change Back Ground</button>
+
+    </body>
+    <script>
+        let worker = new Worker("my-worker.js");
+
+        function changeBackGround() {
+            if(document.body.style.background !== "red"){
+                document.body.style.background = "red";
+            }else{
+                document.body.style.background = "blue";
+            }
+        }
+        function heavyMathmaticalOperation() {
+            worker.postMessage("");
+        }
+        worker.onmessage = function(message){
+            console.log(message);
+            alert(message.data);
+        }
+    </script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Microdata</h2>
+    <div itemscope itemtype="http://data-vocabulary.org/Organization">
+        <h2 itemprop="name">Information Technology Institute</h2>
+        <p>
+            The Information Technology Institute is a national institute established in 1993 in Egypt specializing in IT. The Information Technology Institute is a national institute established in 1993 by the Egyptian Information and Decision Support Center
+        </p>
+        <div itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+          <span itemprop="street-address">Alexandria</span>
+          <span itemprop="country-name">Egypt</span>
+          <span itemprop="postal-code">98987</span>
+        </div>
+        <div itemprop="Geolocation" itemscope itemtype="http://data-vocabulary.org/Geo">
+          <span itemprop="latitude">30.2545N</span>
+        </div>
+    </div>
+    <!-- ? https://validator.schema.org/ -->
+    <!-- ? https://schema.org/Organization -->
+  </body>
+</html>

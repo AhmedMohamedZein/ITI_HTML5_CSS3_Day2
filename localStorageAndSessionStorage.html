@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Web Forms Validation : HTML</title>
+        <style>
+            input {
+                border-radius: 5px;
+                font-size: 15px;    
+                width: 30vh;
+                height: 3vh;  
+            }
+            input[type="email"]:valid {
+                border: 2.5px solid green;
+                background-color: rgb(207, 255, 136);
+            }
+            input[type="email"]:invalid {
+                border: 2px solid  red;         
+                background-color: rgb(255, 143, 143);   
+            }
+            input [type="email"]:focus{
+                border: 2px solid rgb(9, 3, 94); 
+                outline: none; 
+            }
+            input[type="text"]:valid {
+                border: 2.5px solid green;
+                background-color: rgb(207, 255, 136);
+            }
+            input[type="text"]:invalid {
+                border: 2px solid  red;
+                background-color: rgb(255, 143, 143); 
+            }
+            input[type="text"]:focus{
+                border: 2px solid rgb(9, 3, 94); 
+                outline: none; 
+            }
+            main {
+                border: 2px solid black;
+                padding-left: 10px;
+                padding-bottom: 10px;
+            }
+            button {
+                border-radius: 12px ; 
+                height: 30px; 
+                font-family: 'Courier New', Courier, monospace; 
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+
+        <main>
+            <h1> Using localStorage and SessionStorage </h1>
+            
+                
+                <input id="name" type="text" placeholder="Username"/>
+                
+                <br /> <br />
+                
+                <input id="email" type="email" placeholder="Email"/>  
+                 
+                <br /> <br />
+                    
+                <button onclick="storeData()">Add</button>
+                <button onclick="getFromLocalStorage()">Get from</button>
+                <button onclick="getFromSessionStorage()">Get from SessionStorage</button>
+                
+           
+        </main>
+
+    </body>
+    <script>
+        const userName = document.getElementById("name").value;;
+        const email = document.getElementById("email").value ;
+       
+        function storeData () {
+            localStorage.setItem("name" , userName);
+            localStorage.setItem("email", email );
+            sessionStorage.setItem("name" , userName);
+            sessionStorage.setItem("email", email );
+             
+        }
+
+        function getFromLocalStorage() {
+            console.log("Hello");
+            alert(`From LocalStaorage\nName: ${localStorage.getItem("name")}\nE-mail: ${localStorage.getItem("email")}`);
+        }
+        
+        function getFromSessionStorage() {
+            alert(`From SessionStorage\nName: ${sessionStorage.getItem("name")}\nE-mail: ${sessionStorage.getItem("email")}`);
+        }
+    </script>
+
+</html>
